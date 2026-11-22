@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عود - OUD</title>
+<style>
+body{font-family:Arial; background:#1a0f00; color:#fff; text-align:center; margin:0; padding:0}
+.top{background:linear-gradient(#3a2500,#6b4200); padding:35px 15px; border-bottom:2px solid #d4af37}
+.top h1{font-size:45px; margin:0; letter-spacing:5px}
+.top p{color:#facc15; font-size:19px}
+.box{background:#221a0a; padding:25px; border-radius:20px; margin:20px; border:1px solid #d4af37}
+input{width:80%; padding:15px; font-size:22px; text-align:center; border-radius:10px; border:none; margin:15px 0}
+.price{font-size:42px; color:#facc15; font-weight:bold; margin:10px}
+.btn{display:inline-block; background:#d4af37; color:#000; padding:12px 25px; border-radius:50px; font-size:18px; font-weight:bold; margin:5px; border:none}
+ul{list-style:none; padding:0; font-size:18px; line-height:2}
+</style>
+</head>
+<body>
+<div class="top">
+<h1>عود OUD</h1>
+<p>عود فاخر - ريحة تقيلة وثابتة</p>
+</div>
+
+<div class="box">
+<h2>اختار الجرامات اللي انت عاوزها</h2>
+<input type="number" id="gram" value="100" oninput="calc()">
+<p>السعر هيكون:</p>
+<div class="price" id="result">300 جنيه</div>
+<p style="color:#aaa">الجرام بـ 3 جنيه - 100 جرام = 300 جنيه</p>
+<button class="btn" onclick="setG(50)">50 جرام</button>
+<button class="btn" onclick="setG(100)">100 جرام</button>
+<button class="btn" onclick="setG(200)">200 جرام</button>
+<ul>
+<li>✅ عود أصلي وثابت</li>
+<li>✅ ريحة فخمة وشرقية</li>
+<li>✅ تعبئة ممتازة</li>
+</ul>
+</div>
+
+<script>
+function calc(){
+let g = document.getElementById('gram').value;
+if(!g) g=0;
+document.getElementById('result').innerText = (g*3) + " جنيه";
+}
+function setG(v){ document.getElementById('gram').value=v; calc(); }
+</script>
+</body>
+</html>
